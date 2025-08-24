@@ -1,0 +1,81 @@
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Editors/IDEs
+.vscode/
+.idea/
+*.sw?
+*.swp
+*.swo
+*.swn
+
+# Dependencies
+node_modules/
+bower_components/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build output
+dist/
+build/
+out/
+.tmp/
+.temp/
+
+# Tool caches
+.cache/
+.parcel-cache/
+.vite/
+.eslintcache
+
+# Framework outputs
+.next/
+.nuxt/
+.svelte-kit/
+.astro/
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.vuepress/dist/
+.docusaurus/
+
+# Tests/coverage
+coverage/
+.nyc_output/
+cypress/videos/
+cypress/screenshots/
+playwright-report/
+test-results/
+
+# TypeScript
+*.tsbuildinfo
+
+# Env files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+!.env.example
+!.env*.example
+
+# PIDs
+*.pid
+*.pid.lock
+*.seed

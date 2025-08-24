@@ -83,7 +83,8 @@ strong {
     margin-bottom: 2rem;
 }
 
-.section-1 h2 {
+.section-1 h2,
+.section-1 h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: #2d3748;
@@ -139,7 +140,7 @@ strong {
 }
 
 /* Content sections with subtle styling */
-.section-2 p:has(strong:contains("Finlatics")) {
+.section-card {
     background-color: #f7fafc;
     padding: 1.5rem;
     border-radius: 6px;
@@ -147,11 +148,10 @@ strong {
     margin: 1.5rem 0;
 }
 
-.section-2 h2:contains("Skills")+p {
+.section-soft {
     background-color: #f7fafc;
     padding: 1.5rem;
     border-radius: 6px;
-    line-height: 1.8;
 }
 
 /* Project styling */
@@ -247,10 +247,8 @@ html {
     }
 
     /* Adjust card styling for mobile */
-    .section-2 p:has(strong:contains("Finlatics")),
-    .section-2 h2:contains("Projects")+p,
-    .section-2 h2:contains("Projects")+p+p,
-    .section-2 h2:contains("Skills")+p {
+    .section-card,
+    .section-soft {
         padding: 1rem;
         margin: 1rem 0;
     }
