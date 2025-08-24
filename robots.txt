@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://joshitha1808.github.io/sitemap.xml
+Sitemap: https://joshitha1808.github.io/joshi/sitemap.xml
