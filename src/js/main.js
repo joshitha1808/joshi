@@ -1,12 +1,11 @@
 /* ================================================================
    JOSHITHA V — PORTFOLIO JS
-   Smooth scroll, nav behavior, scroll reveal, project filtering
+   Nav, smooth scroll, reveal, project filter, mobile menu
    ================================================================ */
 
 (function () {
     'use strict';
 
-    // ── DOM REFS ──
     const nav = document.getElementById('nav');
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
@@ -15,7 +14,7 @@
     const projectCards = document.querySelectorAll('.project-card');
     const sections = document.querySelectorAll('.section, .hero');
 
-    // ── MOBILE NAV TOGGLE ──
+    /* ── Mobile Nav ── */
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('open');
@@ -23,7 +22,6 @@
             document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
         });
 
-        // Close menu when a link is clicked
         navLinkEls.forEach(link => {
             link.addEventListener('click', () => {
                 navToggle.classList.remove('open');
@@ -33,175 +31,130 @@
         });
     }
 
-    // ── NAVBAR HIDE/SHOW ON SCROLL ──
+    /* ── Navbar hide/show on scroll ── */
     let lastScroll = 0;
     let ticking = false;
 
-    function onScroll() {
-        const currentScroll = window.scrollY;
-
-        if (currentScroll > 100) {
-            if (currentScroll > lastScroll + 5) {
-                nav.classList.add('hidden');
-            } else if (currentScroll < lastScroll - 5) {
-                nav.classList.remove('hidden');
-            }
+    function handleNavScroll() {
+        const y = window.scrollY;
+        if (y > 120) {
+            if (y > lastScroll + 5) nav.classList.add('hidden');
+            else if (y < lastScroll - 5) nav.classList.remove('hidden');
         } else {
             nav.classList.remove('hidden');
         }
-
-        lastScroll = currentScroll;
+        lastScroll = y;
         ticking = false;
     }
 
     window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(onScroll);
-            ticking = true;
-        }
+        if (!ticking) { requestAnimationFrame(handleNavScroll); ticking = true; }
     }, { passive: true });
 
-    // ── ACTIVE NAV LINK HIGHLIGHTING ──
+    /* ── Active nav link ── */
     function updateActiveLink() {
-        const scrollPos = window.scrollY + 150;
-
-        sections.forEach(section => {
-            const top = section.offsetTop;
-            const height = section.offsetHeight;
-            const id = section.getAttribute('id');
-
-            if (scrollPos >= top && scrollPos < top + height) {
-                navLinkEls.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
+        const scrollY = window.scrollY + 160;
+        sections.forEach(sec => {
+            const top = sec.offsetTop;
+            const id = sec.getAttribute('id');
+            if (scrollY >= top && scrollY < top + sec.offsetHeight) {
+                navLinkEls.forEach(l => {
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + id);
                 });
             }
         });
     }
+    window.addEventListener('scroll', () => requestAnimationFrame(updateActiveLink), { passive: true });
 
-    window.addEventListener('scroll', () => {
-        requestAnimationFrame(updateActiveLink);
-    }, { passive: true });
-
-    // ── SCROLL REVEAL ANIMATION ──
+    /* ── Scroll reveal (IntersectionObserver) ── */
     function initReveal() {
-        const revealElements = document.querySelectorAll(
+        const els = document.querySelectorAll(
             '.about-content, .about-image-card, .about-subtitle, .about-description, ' +
             '.about-meta, .tag-row, .skills-content, .project-card, .exp-card, ' +
-            '.contact-grid, .contact-footer-info, .github-widget, .content-heading'
+            '.contact-grid, .contact-footer-info, .github-widget, .content-heading, ' +
+            '.blog-card, .blogs-coming-soon'
         );
+        els.forEach(el => el.classList.add('reveal'));
 
-        revealElements.forEach(el => el.classList.add('reveal'));
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    obs.unobserve(e.target);
                 }
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-        revealElements.forEach(el => observer.observe(el));
+        els.forEach(el => obs.observe(el));
     }
 
-    // ── PROJECT FILTERING ──
+    /* ── Project filter ── */
     if (filterBtns.length && projectCards.length) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active button
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
-                const filter = btn.dataset.filter;
-
-                projectCards.forEach(card => {
-                    const categories = card.dataset.category || '';
-                    if (filter === 'all' || categories.includes(filter)) {
-                        card.style.display = '';
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
+                const f = btn.dataset.filter;
+                projectCards.forEach(c => {
+                    const cats = c.dataset.category || '';
+                    const show = f === 'all' || cats.includes(f);
+                    c.style.display = show ? '' : 'none';
+                    if (show) {
+                        c.style.opacity = '0';
+                        c.style.transform = 'translateY(16px)';
                         requestAnimationFrame(() => {
-                            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
+                            c.style.transition = 'opacity .4s ease, transform .4s ease';
+                            c.style.opacity = '1';
+                            c.style.transform = 'translateY(0)';
                         });
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(10px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
                     }
                 });
             });
         });
     }
 
-    // ── SMOOTH SCROLL FOR ANCHOR LINKS ──
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-            const targetId = anchor.getAttribute('href');
-            if (targetId === '#') return;
-
-            const target = document.querySelector(targetId);
+    /* ── Smooth scroll anchors ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const id = a.getAttribute('href');
+            if (id === '#') return;
+            const target = document.querySelector(id);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
 
-    // ── KEYBOARD FOCUS STYLES ──
-    const focusStyle = document.createElement('style');
-    focusStyle.textContent = `
-        a:focus-visible, button:focus-visible {
-            outline: 2px solid rgba(255,255,255,0.5);
-            outline-offset: 3px;
-        }
-    `;
-    document.head.appendChild(focusStyle);
+    /* ── Focus styles ── */
+    const s = document.createElement('style');
+    s.textContent = 'a:focus-visible,button:focus-visible{outline:2px solid rgba(0,0,0,.2);outline-offset:3px;}';
+    document.head.appendChild(s);
 
-    // ── EXTERNAL LINK SECURITY ──
-    document.querySelectorAll('a[target="_blank"]').forEach(a => {
-        a.setAttribute('rel', 'noopener noreferrer');
-    });
+    /* ── External link security ── */
+    document.querySelectorAll('a[target="_blank"]').forEach(a => a.setAttribute('rel', 'noopener noreferrer'));
 
-    // ── LAZY LOADING IMAGES ──
+    /* ── Image lazy load ── */
     document.querySelectorAll('img').forEach(img => {
         if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
         if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
     });
 
-    // ── GITHUB RETRY BUTTON (fun interaction) ──
-    const retryBtn = document.querySelector('.github-retry');
-    if (retryBtn) {
-        retryBtn.addEventListener('click', () => {
-            retryBtn.textContent = 'SYNCING...';
-            retryBtn.style.color = 'var(--text-secondary)';
+    /* ── GitHub retry button ── */
+    const retry = document.querySelector('.github-retry');
+    if (retry) {
+        retry.addEventListener('click', () => {
+            retry.textContent = 'SYNCING...';
+            retry.style.color = 'var(--zinc-600)';
             setTimeout(() => {
-                retryBtn.textContent = 'FEED UNAVAILABLE';
-                setTimeout(() => {
-                    retryBtn.textContent = 'RETRY SYNC';
-                    retryBtn.style.color = '';
-                }, 2000);
+                retry.textContent = 'FEED UNAVAILABLE';
+                setTimeout(() => { retry.textContent = 'RETRY SYNC'; retry.style.color = ''; }, 2000);
             }, 1500);
         });
     }
 
-    // ── INIT ON DOM READY ──
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initReveal);
-    } else {
-        initReveal();
-    }
+    /* ── Init ── */
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initReveal);
+    else initReveal();
 
 })();
