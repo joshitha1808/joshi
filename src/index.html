@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,121 +5,403 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Joshitha V | Data Science Student & Intern</title>
+    <title>Joshitha V | Data Science Student &amp; Intern</title>
     <meta name="description"
         content="Portfolio of Joshitha V — Computer Science student and data science intern. Projects in ML, EDA, Power BI, scikit-learn, and analytics.">
     <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#0a0a0a">
     <link rel="canonical" href="https://joshitha1808.github.io/joshi/">
 
-    <!-- Preconnects for performance -->
+    <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Icons -->
     <link rel="icon" href="../public/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Joshitha V | Data Science Student & Intern">
+    <meta property="og:title" content="Joshitha V | Data Science Student &amp; Intern">
     <meta property="og:description"
         content="Projects and experience across Data Science, Machine Learning, and Analytics.">
     <meta property="og:url" content="https://joshitha1808.github.io/joshi/">
     <meta property="og:image" content="https://joshitha1808.github.io/joshi/public/images/me.jpeg">
     <meta property="og:image:alt" content="Portrait of Joshitha V">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Joshitha V | Data Science Student & Intern">
+    <meta name="twitter:title" content="Joshitha V | Data Science Student &amp; Intern">
     <meta name="twitter:description" content="Portfolio: ML projects, EDA, Power BI dashboards, and more.">
     <meta name="twitter:image" content="https://joshitha1808.github.io/joshi/public/images/me.jpeg">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Joshitha V",
-            "image": "https://joshitha1808.github.io/joshi/public/images/me.jpeg",
-            "url": "https://joshitha1808.github.io/joshi/",
-            "jobTitle": "Data Science Intern",
-            "email": "mailto:joshitha0818@gmail.com",
-            "address": {"@type": "PostalAddress", "addressLocality": "Nellore", "addressCountry": "IN"},
-            "sameAs": [
-                "https://www.linkedin.com/in/veerapaneni-joshitha-393a07322/",
-                "https://github.com/joshitha1808/"
-            ],
-            "knowsAbout": ["Data Science", "Machine Learning", "Python", "Power BI", "EDA"]
-        }
-        </script>
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Joshitha V",
+        "image": "https://joshitha1808.github.io/joshi/public/images/me.jpeg",
+        "url": "https://joshitha1808.github.io/joshi/",
+        "jobTitle": "Data Science Intern",
+        "email": "mailto:joshitha0818@gmail.com",
+        "address": {"@type": "PostalAddress", "addressLocality": "Nellore", "addressCountry": "IN"},
+        "sameAs": [
+            "https://www.linkedin.com/in/veerapaneni-joshitha-393a07322/",
+            "https://github.com/joshitha1808/"
+        ],
+        "knowsAbout": ["Data Science", "Machine Learning", "Python", "Power BI", "EDA"]
+    }
+    </script>
 </head>
 
 <body>
-    <div class="grid-2">
-        <!-- Sidebar -->
-        <div class="section-1">
-            <div class="profile-photo">
-                <img src="../public/images/me.jpeg" alt="Portrait of Joshitha V" width="200" height="200"
-                    decoding="async" />
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">JOSHITHAV</a>
+            <div class="nav-links" id="navLinks">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Connect</a>
             </div>
-            <h1>Joshitha V</h1>
-            <p>Nellore, India</p>
-            <a href="https://www.linkedin.com/in/veerapaneni-joshitha-393a07322/" target="_blank"
-                rel="noopener noreferrer" aria-label="LinkedIn profile of Joshitha V"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/joshitha1808/" target="_blank" rel="noopener noreferrer"
-                aria-label="GitHub profile of Joshitha V"><i class="fab fa-github"></i></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </nav>
 
-        <!-- Main content -->
-        <div class="section-2">
-            <h2>About</h2>
-            <p>Passionate Computer Science student and aspiring software engineer with experience in data science and
-                machine learning. Strong background in problem-solving and analytics.</p>
-
-            <h2>Experience</h2>
-            <p><strong>Finlatics</strong> — Data Science Intern (Jan 2025 – Apr 2025, Remote)<br>
-                Applied machine learning techniques on real-world datasets to extract actionable insights.
-                Performed data cleaning and exploratory data analysis (EDA) using Python, Pandas, and NumPy.
-                Built and evaluated models like Logistic Regression, KNN, and Decision Trees.
-                Visualized findings with Matplotlib & Seaborn and documented complete workflows in Jupyter/Colab.
-            </p>
-
-            <h2>Skills</h2>
-            <p>
-                <strong>Programming Languages:</strong> Python, C++, Java, R, HTML, CSS, JavaScript<br>
-                <strong>Frameworks/Libraries:</strong> Pandas, NumPy, scikit-learn, Seaborn, Matplotlib<br>
-                <strong>Data Analysis & Visualization:</strong> Power BI, MS Excel, Data Cleaning, EDA, Dashboard
-                Design, Report Building<br>
-                <strong>Databases:</strong> SQL<br>
-                <strong>Tools & Platforms:</strong> Jupyter Notebook, Google Colab, Anaconda, Git, GitHub, VS Code<br>
-                <strong>Soft Skills:</strong> Problem Solving, Analytical Thinking, Team Collaboration, Communication
-            </p>
-
-            <h2>Projects</h2>
-            <p>
-                <strong>Customer Churn Analysis & Prediction</strong><br>
-                Excel, Power BI, Python (Colab), Pandas, scikit-learn<br>
-                Developed a machine learning pipeline to predict customer churn. Cleaned and processed datasets,
-                built Power BI dashboards for churn trends, and trained Logistic Regression models in scikit-learn
-                to generate actionable retention strategies.
-            </p>
-            <p>
-                <strong>AI Legal Sentiment Analyzer</strong><br>
-                IBM watsonx.ai, Prompt Lab, Foundation Models (FLAN-T5, Mistral), Python<br>
-                Automated sentiment classification of legal documents using few-shot prompting with foundation models.
-                Supported batch CSV/PDF classification, exported structured results, and built a fallback
-                Logistic Regression classifier in Python for offline analysis. Enabled law firms and compliance
-                teams to streamline document review and risk detection.
-            </p>
-
-            <h2>Contact</h2>
-            <p>Email: joshitha0818@gmail.com</p>
+    <!-- ===== AVAILABILITY BANNER ===== -->
+    <div class="banner">
+        <div class="banner-track">
+            <span>AVAILABLE FOR PROJECTS &mdash;</span>
+            <span>OPEN TO WORK &mdash;</span>
+            <span>DATA SCIENCE &mdash;</span>
+            <span>MACHINE LEARNING &mdash;</span>
+            <span>AVAILABLE FOR PROJECTS &mdash;</span>
+            <span>OPEN TO WORK &mdash;</span>
+            <span>DATA SCIENCE &mdash;</span>
+            <span>MACHINE LEARNING &mdash;</span>
         </div>
     </div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <p class="hero-label">DEVELOPER &amp; DATA SCIENTIST</p>
+            <h1 class="hero-title">JOSHITHA V</h1>
+            <p class="hero-desc">Crafting data-driven solutions with a focus on machine learning,
+                analytics, and clean engineering practices.</p>
+            <div class="hero-actions">
+                <a href="mailto:joshitha0818@gmail.com" class="btn btn-primary">COLLABORATE</a>
+                <a href="#" class="btn btn-secondary">RESUME</a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://www.linkedin.com/in/veerapaneni-joshitha-393a07322/" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/joshitha1808/" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="section" id="about">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">01</span>
+                <h2 class="section-title">BIOGRAPHY</h2>
+            </div>
+            <div class="about-content">
+                <h3 class="content-heading">What I Do</h3>
+                <div class="about-image-card">
+                    <img src="../public/images/me.jpeg" alt="Portrait of Joshitha V" width="400" height="400"
+                        loading="lazy" decoding="async" />
+                    <div class="image-overlay">
+                        <span class="overlay-badge active-badge">ACTIVE</span>
+                        <span class="overlay-badge">PROFILE V.26</span>
+                        <span class="overlay-badge accent-badge">THE DATA ARCHITECT</span>
+                    </div>
+                </div>
+                <h3 class="about-subtitle">Building data-driven products with a focus on machine learning
+                    and intelligent analytics.</h3>
+                <p class="about-description">I bridge the gap between raw data and actionable insights. Based in
+                    Nellore, India, I focus on creating ML pipelines, dashboards, and analytical tools
+                    that are technically sound and practically useful. Passionate Computer Science student
+                    with hands-on experience in data science and machine learning.</p>
+                <div class="about-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">LOCATION</span>
+                        <span class="meta-value">Nellore, India</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">STATUS</span>
+                        <span class="meta-value status-dot">Open to Work</span>
+                    </div>
+                </div>
+                <div class="tag-row">
+                    <span class="tag">PYTHON</span>
+                    <span class="tag">POWER BI</span>
+                    <span class="tag">SCIKIT-LEARN</span>
+                    <span class="tag">PANDAS</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag tag-more">+5 MORE</span>
+                </div>
+                <a href="#contact" class="btn btn-outline">GET IN TOUCH</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS / INVENTORY SECTION ===== -->
+    <section class="section section-alt" id="skills">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">02</span>
+                <h2 class="section-title">INVENTORY</h2>
+            </div>
+            <div class="skills-content">
+                <h3 class="content-heading">Tech Stack</h3>
+                <div class="skills-marquee">
+                    <div class="skills-track">
+                        <span class="skill-chip"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="skill-chip"><i class="fa-brands fa-html5"></i> HTML</span>
+                        <span class="skill-chip"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                        <span class="skill-chip"><i class="fa-brands fa-java"></i> Java</span>
+                        <span class="skill-chip"><i class="fa-solid fa-code"></i> C++</span>
+                        <span class="skill-chip"><i class="fa-solid fa-chart-simple"></i> R</span>
+                        <span class="skill-chip"><i class="fa-solid fa-database"></i> SQL</span>
+                        <span class="skill-chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="skill-chip"><i class="fa-brands fa-github"></i> GitHub</span>
+                        <!-- duplicate for seamless scroll -->
+                        <span class="skill-chip"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                        <span class="skill-chip"><i class="fa-brands fa-html5"></i> HTML</span>
+                        <span class="skill-chip"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                        <span class="skill-chip"><i class="fa-brands fa-java"></i> Java</span>
+                        <span class="skill-chip"><i class="fa-solid fa-code"></i> C++</span>
+                        <span class="skill-chip"><i class="fa-solid fa-chart-simple"></i> R</span>
+                        <span class="skill-chip"><i class="fa-solid fa-database"></i> SQL</span>
+                        <span class="skill-chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+                        <span class="skill-chip"><i class="fa-brands fa-github"></i> GitHub</span>
+                    </div>
+                </div>
+                <div class="skills-marquee reverse">
+                    <div class="skills-track">
+                        <span class="skill-chip"><i class="fa-solid fa-brain"></i> scikit-learn</span>
+                        <span class="skill-chip"><i class="fa-solid fa-table"></i> Pandas</span>
+                        <span class="skill-chip"><i class="fa-solid fa-calculator"></i> NumPy</span>
+                        <span class="skill-chip"><i class="fa-solid fa-chart-line"></i> Matplotlib</span>
+                        <span class="skill-chip"><i class="fa-solid fa-chart-pie"></i> Seaborn</span>
+                        <span class="skill-chip"><i class="fa-solid fa-chart-bar"></i> Power BI</span>
+                        <span class="skill-chip"><i class="fa-solid fa-file-excel"></i> MS Excel</span>
+                        <span class="skill-chip"><i class="fa-solid fa-laptop-code"></i> Jupyter</span>
+                        <span class="skill-chip"><i class="fa-solid fa-cloud"></i> Google Colab</span>
+                        <span class="skill-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Anaconda</span>
+                        <!-- duplicate for seamless scroll -->
+                        <span class="skill-chip"><i class="fa-solid fa-brain"></i> scikit-learn</span>
+                        <span class="skill-chip"><i class="fa-solid fa-table"></i> Pandas</span>
+                        <span class="skill-chip"><i class="fa-solid fa-calculator"></i> NumPy</span>
+                        <span class="skill-chip"><i class="fa-solid fa-chart-line"></i> Matplotlib</span>
+                        <span class="skill-chip"><i class="fa-solid fa-chart-pie"></i> Seaborn</span>
+                        <span class="skill-chip"><i class="fa-solid fa-chart-bar"></i> Power BI</span>
+                        <span class="skill-chip"><i class="fa-solid fa-file-excel"></i> MS Excel</span>
+                        <span class="skill-chip"><i class="fa-solid fa-laptop-code"></i> Jupyter</span>
+                        <span class="skill-chip"><i class="fa-solid fa-cloud"></i> Google Colab</span>
+                        <span class="skill-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Anaconda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS / PORTFOLIO SECTION ===== -->
+    <section class="section" id="projects">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">03</span>
+                <h2 class="section-title">PORTFOLIO</h2>
+            </div>
+            <div class="projects-content">
+                <h3 class="content-heading">Featured Works</h3>
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                    <button class="filter-btn" data-filter="data">Data Analysis</button>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="ml data">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badges">
+                                <span class="project-badge">MACHINE LEARNING</span>
+                            </div>
+                            <h4 class="project-title">Customer Churn Analysis &amp; Prediction</h4>
+                            <p class="project-desc">Developed a machine learning pipeline to predict customer churn.
+                                Built Power BI dashboards for churn trends, and trained Logistic Regression models
+                                in scikit-learn to generate actionable retention strategies.</p>
+                            <div class="project-tech">
+                                <span>Excel</span>
+                                <span>Power BI</span>
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>scikit-learn</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="ml data">
+                        <div class="project-image">
+                            <div class="project-placeholder">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-badges">
+                                <span class="project-badge">AI / NLP</span>
+                            </div>
+                            <h4 class="project-title">AI Legal Sentiment Analyzer</h4>
+                            <p class="project-desc">Automated sentiment classification of legal documents using
+                                few-shot prompting with foundation models. Built a fallback Logistic Regression
+                                classifier in Python for offline analysis. Enabled law firms and compliance
+                                teams to streamline document review and risk detection.</p>
+                            <div class="project-tech">
+                                <span>IBM watsonx.ai</span>
+                                <span>FLAN-T5</span>
+                                <span>Mistral</span>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section class="section section-alt" id="experience">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">04</span>
+                <h2 class="section-title">EXPERIENCE</h2>
+            </div>
+            <div class="experience-content">
+                <h3 class="content-heading">Work &amp; Impact</h3>
+                <div class="exp-timeline">
+                    <!-- Experience 1 -->
+                    <div class="exp-card">
+                        <div class="exp-meta">
+                            <div class="exp-meta-item">
+                                <span class="exp-meta-label">DURATION</span>
+                                <span class="exp-meta-value">Jan 2025 — Apr 2025</span>
+                            </div>
+                            <div class="exp-meta-item">
+                                <span class="exp-meta-label">LOCATION</span>
+                                <span class="exp-meta-value">Remote</span>
+                            </div>
+                        </div>
+                        <div class="exp-body">
+                            <h4 class="exp-company">FINLATICS</h4>
+                            <p class="exp-role">DATA SCIENCE INTERN</p>
+                            <ul class="exp-list">
+                                <li>Applied machine learning techniques on real-world datasets to extract actionable insights.</li>
+                                <li>Performed data cleaning and exploratory data analysis (EDA) using Python, Pandas, and NumPy.</li>
+                                <li>Built and evaluated models like Logistic Regression, KNN, and Decision Trees.</li>
+                                <li>Visualized findings with Matplotlib &amp; Seaborn and documented complete workflows in Jupyter/Colab.</li>
+                            </ul>
+                            <div class="exp-tools">
+                                <span class="exp-tools-label">TOOLS :</span>
+                                <span class="exp-tools-list">PYTHON, PANDAS, SCIKIT-LEARN, POWER BI, +3 MORE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub Activity Widget -->
+                <div class="github-widget">
+                    <span class="github-status"><i class="fa-solid fa-circle-dot"></i> Activity feed offline —</span>
+                    <a href="https://github.com/joshitha1808/" target="_blank" rel="noopener noreferrer"
+                        class="github-link">View Profile</a>
+                    <button class="github-retry">RETRY SYNC</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="section section-contact" id="contact">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">05</span>
+                <h2 class="section-title">AVAILABLE FOR WORK</h2>
+            </div>
+            <div class="contact-content">
+                <h3 class="content-heading">Get In Touch</h3>
+                <div class="contact-grid">
+                    <a href="mailto:joshitha0818@gmail.com" class="contact-card">
+                        <span class="contact-num">01</span>
+                        <span class="contact-type">EMAIL</span>
+                        <span class="contact-action">SEND MAIL &mdash;&gt;</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/veerapaneni-joshitha-393a07322/" target="_blank"
+                        rel="noopener noreferrer" class="contact-card">
+                        <span class="contact-num">02</span>
+                        <span class="contact-type">LINKEDIN</span>
+                        <span class="contact-action">NETWORK &mdash;&gt;</span>
+                    </a>
+                    <a href="https://github.com/joshitha1808/" target="_blank" rel="noopener noreferrer"
+                        class="contact-card">
+                        <span class="contact-num">03</span>
+                        <span class="contact-type">GITHUB</span>
+                        <span class="contact-action">SOURCE &mdash;&gt;</span>
+                    </a>
+                </div>
+                <div class="contact-footer-info">
+                    <p class="contact-location">BASED IN NELLORE, INDIA</p>
+                    <a href="mailto:joshitha0818@gmail.com" class="contact-email-big">JOSHITHA0818@GMAIL.COM</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <h3 class="footer-name">JOSHITHA V</h3>
+                <p class="footer-tagline">DATA SCIENTIST &amp;<br>ML ENGINEER</p>
+            </div>
+            <div class="footer-nav">
+                <a href="#about">ABOUT</a>
+                <a href="#projects">WORK</a>
+                <a href="#contact">CONNECT</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PORTFOLIO</p>
+                <p>ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+
     <script defer src="js/main.js"></script>
 </body>
 
