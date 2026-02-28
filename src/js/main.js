@@ -1,8 +1,3 @@
-/* ================================================================
-   JOSHITHA V — PORTFOLIO JS
-   Nav, smooth scroll, reveal, project filter, mobile menu
-   ================================================================ */
-
 (function () {
     'use strict';
 
